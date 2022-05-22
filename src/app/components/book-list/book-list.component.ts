@@ -40,7 +40,7 @@ export class BookListComponent {
   }
   /* Delete */
   deleteBook(index: number, e) {
-    if (window.confirm('Are you sure?')) {
+    if (window.confirm('Estás seguro de eliminar el libro?')) {
       const data = this.dataSource.data;
       data.splice(
         this.paginator.pageIndex * this.paginator.pageSize + index,

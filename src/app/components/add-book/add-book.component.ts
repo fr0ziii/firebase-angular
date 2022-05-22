@@ -23,11 +23,11 @@ export class AddBookComponent implements OnInit {
   selectedBindingType: string;
   bookForm: FormGroup;
   BindingType: any = [
-    'Paperback',
-    'Case binding',
-    'Perfect binding',
-    'Saddle stitch binding',
-    'Spiral binding',
+    'Rústica',
+    'Encuadernación en caja',
+    'Encuadernación perfecta',
+    "Encuadernación a caballete",
+    "Encuadernación en espiral",
   ];
   ngOnInit() {
     this.bookApi.GetBookList();

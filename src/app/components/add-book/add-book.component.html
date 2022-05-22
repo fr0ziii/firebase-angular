@@ -1,6 +1,6 @@
 <!-- Title group  -->
 <div class="title-group">
-    <h1 class="mat-h1">Add Book</h1>
+    <h1 class="mat-h1">Añadir libro</h1>
     <mat-divider fxFlex="1 0"></mat-divider>
   </div>
   <!-- Book form -->
@@ -11,17 +11,14 @@
       #resetBookForm="ngForm"
       novalidate
     >
-      <!-- Left block -->
       <mat-card>
         <div class="controlers-wrapper">
-          <!-- Book name -->
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="Book name" formControlName="book_name" />
+            <input matInput placeholder="Nombre del libro" formControlName="book_name" />
             <mat-error *ngIf="handleError('book_name', 'required')">
-              You must provide a<strong>book name</strong>
+              Tienes que introducir<strong> un nombre para el libro</strong>
             </mat-error>
           </mat-form-field>
-          <!-- ISBN -->
           <mat-form-field class="example-full-width">
             <input
               matInput
@@ -32,24 +29,24 @@
               maxlength="10"
             />
             <mat-error *ngIf="handleError('isbn_10', 'required')">
-              You must provide a <strong>10 digit ISBN</strong>
+              Tienes que introducir <strong>un código de 10 dígitos tipo ISBN</strong>
             </mat-error>
             <mat-error *ngIf="handleError('isbn_10', 'pattern')">
-              Only numbers are allowed
+              Solo números son permitidos
             </mat-error>
             <mat-error *ngIf="handleError('isbn_10', 'minlength')">
-              Your <strong>ISBN</strong> must be 10 digit
+              El <strong>ISBN</strong> tiene que ser de 10 dígitos
             </mat-error>
           </mat-form-field>
           <!-- Author name -->
           <mat-form-field class="example-full-width">
             <input
               matInput
-              placeholder="Author name"
+              placeholder="Nombre del autor"
               formControlName="author_name"
             />
             <mat-error *ngIf="handleError('author_name', 'required')">
-              You must provide an <strong>author name</strong>
+              Tienes que introducir un <strong>nombre del autor</strong>
             </mat-error>
           </mat-form-field>
           <!-- Publication date -->
@@ -58,7 +55,7 @@
               matInput
               readonly
               [matDatepicker]="picker"
-              placeholder="Publication date"
+              placeholder="Fecha de publicación"
               formControlName="publication_date"
               (dateChange)="formatDate($event)"
             />
@@ -78,7 +75,7 @@
         <div class="controlers-wrapper">
           <!-- Book binding -->
           <mat-form-field>
-            <mat-label>Binding type</mat-label>
+            <mat-label>Tipo de encuadernación</mat-label>
             <mat-select formControlName="binding_type">
               <mat-option
                 [value]="bindingType"
@@ -92,12 +89,12 @@
           </mat-form-field>
           <!-- Book stock -->
           <div class="misc-bottom-padding">
-            <mat-label>Available in stock: </mat-label>
+            <mat-label>Disponible en stock: </mat-label>
             <mat-radio-group
               aria-label="Select an option"
               formControlName="in_stock"
             >
-              <mat-radio-button value="Yes">Yes</mat-radio-button>
+              <mat-radio-button value="Yes">Si</mat-radio-button>
               <mat-radio-button value="No">No</mat-radio-button>
             </mat-radio-group>
           </div>
@@ -114,7 +111,7 @@
                 <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
               </mat-chip>
               <input
-                placeholder="Add languages"
+                placeholder="Añadir idiomas"
                 [matChipInputFor]="chipList"
                 [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
                 [matChipInputAddOnBlur]="addOnBlur"
@@ -123,7 +120,7 @@
             </mat-chip-list>
             <i
               class="material-icons tooltip-info"
-              matTooltip="Enter item name and press enter to add multiple items"
+              matTooltip="Introduzca el nombre del artículo y pulse Intro para añadir varios artículos"
             >
               info
             </i>
@@ -134,9 +131,9 @@
       <mat-card>
         <div class="full-wrapper button-wrapper">
           <div class="button-wrapper">
-            <button mat-flat-button color="warn">Submit</button>
+            <button mat-flat-button color="warn">Añadir</button>
             <button mat-flat-button color="war" (click)="resetForm()">
-              Clear
+              Limpiar
             </button>
           </div>
         </div>

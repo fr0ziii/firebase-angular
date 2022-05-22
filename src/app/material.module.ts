@@ -36,7 +36,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
       MatChipsModule,
       MatTooltipModule,
       MatTableModule,
-      MatPaginatorModule
+      MatPaginatorModule,
    ],
    exports: [
       MatButtonModule,
